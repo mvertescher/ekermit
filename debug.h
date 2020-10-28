@@ -8,6 +8,10 @@
 #endif /* DEBUG */
 #endif /* NODEBUG */
 
+#ifdef UEFI
+#include "platformUefi.h"
+#endif
+
 #ifdef DEBUG				/* Debugging included... */
 /* dodebug() function codes... */
 #define DB_OPN 1			/* Open log */
@@ -17,7 +21,11 @@
 #define DB_PKT 5			/* Record a Kermit packet in log */
 #define DB_CLS 6			/* Close log */
 
-void dodebug(int, UCHAR *, UCHAR *, long); /* Prototype */
+void
+#ifdef UEFI
+EFIAPI 
+#endif
+dodebug(int, UCHAR *, UCHAR *, long); /* Prototype */
 /*
   dodebug() is accessed throug a macro that:
    . Coerces its args to the required types.
