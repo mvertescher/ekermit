@@ -530,15 +530,7 @@ kermit(short f,				/* Function code */
 	    debug(DB_LOG,"Ebqflg",0,(k->ebqflg));
 	    debug(DB_CHR,"Ebq",0,(k->ebq));
 	}
-	//k->filename = *(k->filelist);	/* Get next filename */
-  EFI_STATUS efiStatus;
-  efiStatus = getNextFilename( &k->filename[0] ); 
-  if (EFI_ERROR(efiStatus)) {
-      debug(DB_LOG, "efiStatus", 0, efiStatus);
-  } else {
-      debug(DB_LOG, "getNextFilename", k->filename, 0 );
-      //AsciiPrint ( "getNextFilename %a %r", k->filename, efiStatus );
-  }
+	k->filename = *(k->filelist);	/* Get next filename */
 	if (k->filename) {		/* If there is one */
 	    //int i;
 	    for (i = 0; i < FN_MAX; i++) { /* Copy name to result struct */

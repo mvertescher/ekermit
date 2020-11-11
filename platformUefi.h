@@ -3,7 +3,7 @@
   The platform.h definitions for embedded Kermit v1.6 for use under Uefi as a
   Shell application.
 
-Portions Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
+Uefi Portions Copyright (c) 2020, Intel Corporation. All rights reserved.<BR>
 SPDX-License-Identifier: BSD-2-Clause-Patent
 
 Portions Copyright (C) 1995, 2011, 
@@ -128,7 +128,5 @@ void * memset (void *, UINTN, UINT8);
 #define P_WSLOTS 1
 
 #define MAXRPKTLEN 63
-
-extern EFI_STATUS EFIAPI getNextFilename( UCHAR * );
 
 #endif //__KERMIT_PLATFORM_H__
