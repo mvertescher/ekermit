@@ -55,6 +55,11 @@
 */
 #ifdef NULL
 #undef NULL
+
+#ifndef NULL
+#define NULL  ((VOID *) 0)
+#endif
+
 #endif /* NULL */
 
 /* Feature Selection */
